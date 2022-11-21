@@ -14,7 +14,7 @@ namespace hesap_makinası
     {
         char _process;
         bool _clean_screen;
-         int _first_number;
+        ulong _first_number;
         public Form1()
         {
             InitializeComponent();
@@ -169,30 +169,32 @@ namespace hesap_makinası
         {
             _process = '+';
             _clean_screen= true;
-            _first_number = Convert.ToInt32(txtbox.Text);
+            _first_number = Convert.ToUInt64(txtbox.Text);
         }
 
         private void btn_equal_Click(object sender, EventArgs e)
         {
-            int _second_number  = Convert.ToInt32(txtbox.Text);
-            int result;
+            ulong _second_number  = Convert.ToUInt64(txtbox.Text);
+            ulong result;
+            var first = Convert.ToUInt64(_first_number);
+            var second = Convert.ToUInt64(_second_number);
 
             switch (_process)
             {
                 case '+':
-                    result = _first_number + _second_number;
+                    result = first + second;
                     break;
 
                 case '-':
-                    result = _first_number - _second_number;
+                    result = first - second;
                     break;
 
                 case '*':
-                    result = _first_number * _second_number;
+                    result = first * second;
                     break;
 
                 case '/':
-                    result = _first_number / _second_number;
+                    result = first / second;
                     break;
 
                 default:
@@ -207,21 +209,21 @@ namespace hesap_makinası
         {
             _process = '-';
             _clean_screen = true;
-            _first_number = Convert.ToInt32(txtbox.Text);
+            _first_number = Convert.ToUInt64(txtbox.Text);
         }
 
         private void btn_times_Click(object sender, EventArgs e)
         {
             _process = '*';
             _clean_screen = true;
-            _first_number = Convert.ToInt32(txtbox.Text);
+            _first_number = Convert.ToUInt64(txtbox.Text);
         }
 
         private void btn_divided_Click(object sender, EventArgs e)
         {
             _process = '/';
             _clean_screen = true;
-            _first_number = Convert.ToInt32(txtbox.Text);
+            _first_number = Convert.ToUInt64(txtbox.Text);
         }
     }
 }
