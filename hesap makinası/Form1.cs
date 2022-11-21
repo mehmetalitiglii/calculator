@@ -161,7 +161,7 @@ namespace hesap_makinası
         private void btn_C_Click(object sender, EventArgs e)
         {
             txtbox.Text = txtbox.Text.Substring(0 , txtbox.Text.Length - 1).ToString();
-            if (txtbox.Text == "") txtbox.Text = "0";
+            if (txtbox.Text == "") txtbox.Text = "0"; 
         }
 
         
